@@ -5,30 +5,25 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        // upper
+        // Upper half
         for (int i = 1; i <= n; i++) {
-            for (int j = i; j < n; j++) System.out.print(" ");
+            for (int s = 1; s <= n - i; s++) System.out.print(" ");
 
-            if (i == 1) {
-                System.out.print("*");
-            } else {
-                System.out.print("*");
-                for (int j = 1; j <= 2*i-3; j++) System.out.print(" ");
+            System.out.print("*");
+            if (i > 1) {
+                for (int s = 1; s <= 2*i - 3; s++) System.out.print(" ");
                 System.out.print("*");
             }
-
             System.out.println();
         }
 
-        // lower
-        for (int i = n-1; i >= 1; i--) {
-            for (int j = i; j < n; j++) System.out.print(" ");
+        // Lower half
+        for (int i = n - 1; i >= 1; i--) {
+            for (int s = 1; s <= n - i; s++) System.out.print(" ");
 
-            if (i == 1) {
-                System.out.print("*");
-            } else {
-                System.out.print("*");
-                for (int j = 1; j <= 2*i-3; j++) System.out.print(" ");
+            System.out.print("*");
+            if (i > 1) {
+                for (int s = 1; s <= 2*i - 3; s++) System.out.print(" ");
                 System.out.print("*");
             }
 
