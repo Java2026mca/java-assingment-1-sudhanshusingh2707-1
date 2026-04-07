@@ -5,17 +5,22 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        // TODO: Print Pascal's Triangle for n rows
-        //       Values on each row separated by single space
-        //       No leading or trailing spaces
-        //
-        // Input: 5
-        // Output:
-        // 1
-        // 1 1
-        // 1 2 1
-        // 1 3 3 1
-        // 1 4 6 4 1
+        for (int i = 0; i < n; i++) {
+            int number = 1;
 
+            for (int j = 0; j <= i; j++) {
+                System.out.print(number);
+
+                if (j < i) {
+                    System.out.print(" ");
+                }
+
+                number = number * (i - j) / (j + 1);
+            }
+
+            System.out.println();
+        }
+
+        sc.close();
     }
 }
