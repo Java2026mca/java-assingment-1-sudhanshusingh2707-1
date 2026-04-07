@@ -4,52 +4,54 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-
-        for (int i = 0; i < n; i++) {
-            int num = sc.nextInt();
-
-            boolean isPrime = checkPrime(num);
-            boolean isPerfect = checkPerfect(num);
-
-            if (isPrime && isPerfect) {
-                System.out.println("Both");
-            } else if (isPrime) {
-                System.out.println("Prime");
-            } else if (isPerfect) {
-                System.out.println("Perfect");
-            } else {
-                System.out.println("Neither");
-            }
-        }
-
-        sc.close();
-    }
+         for (int i = 0; i < n; i++) {
+    int x = sc.nextInt();
 
     // Check Prime
-    public static boolean checkPrime(int num) {
-        if (num <= 1) return false;
-
-        for (int i = 2; i * i <= num; i++) {
-            if (num % i == 0) return false;
+    boolean isPrime = true;
+    if (x <= 1) isPrime = false;
+    for (int j = 2; j * j <= x; j++) {
+        if (x % j == 0) {
+            isPrime = false;
+            break;
         }
-        return true;
     }
 
-    // Check Perfect Number
-    public static boolean checkPerfect(int num) {
-        if (num <= 1) return false;
-
-        int sum = 1;
-
-        for (int i = 2; i * i <= num; i++) {
-            if (num % i == 0) {
-                sum += i;
-                if (i != num / i) {
-                    sum += num / i;
-                }
-            }
+    // Check Perfect
+    int sum = 0;
+    for (int j = 1; j <= x / 2; j++) {
+        if (x % j == 0) {
+            sum += j;
         }
+    }
+    boolean isPerfect = (sum == x && x != 0);
 
-        return sum == num;
+    // Output
+    if (isPrime && isPerfect) {
+        System.out.println("Both");
+    } else if (isPrime) {
+        System.out.println("Prime");
+    } else if (isPerfect) {
+        System.out.println("Perfect");
+    } else {
+        System.out.println("Neither");
+    }
+}
+        // TODO: Read n integers. For each number print:
+        //   "Prime"     if it is prime
+        //   "Perfect"   if it is a perfect number (sum of proper divisors == itself, e.g. 6=1+2+3)
+        //   "Both"      if it is both (there are none < 100, but handle it)
+        //   "Neither"   otherwise
+        //
+        // Input:
+        // 4
+        // 6 13 8 28
+        //
+        // Output:
+        // Perfect
+        // Prime
+        // Neither
+        // Perfect
+
     }
 }
