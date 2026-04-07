@@ -30,7 +30,6 @@ public class Main {
                 bottom--;
             }
 
-            // Bottom → Top
             if (left <= right) {
                 for (int i = bottom; i >= top; i--) {
                     matrix[i][left] = num++;
@@ -47,13 +46,12 @@ public class Main {
             System.out.println();
         }
 
-        // Calculate diagonal sum
         int diagonalSum = 0;
         for (int i = 0; i < n; i++) {
             diagonalSum += matrix[i][i];
         }
 
-        System.out.println("Diagonal: " + diagonalSum);
+        System.out.println("Diagonal:" + diagonalSum);
 
         sc.close();
     }
