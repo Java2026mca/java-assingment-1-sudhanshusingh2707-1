@@ -4,30 +4,30 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-
-        // Upper half
-        for (int i = 1; i <= n; i++) {
-            for (int s = 1; s <= n - i; s++) System.out.print(" ");
-
-            System.out.print("*");
-            if (i > 1) {
-                for (int s = 1; s <= 2*i - 3; s++) System.out.print(" ");
-                System.out.print("*");
-            }
-            System.out.println();
+        for (int i = 0; i < n; i++) {
+    int num = 1;
+    for (int j = 0; j <= i; j++) {
+        System.out.print(num);
+        
+        if (j < i) {
+            System.out.print(" ");
         }
+        
+        num = num * (i - j) / (j + 1);
+    }
+    System.out.println();
+}
+        // TODO: Print Pascal's Triangle for n rows
+        //       Values on each row separated by single space
+        //       No leading or trailing spaces
+        //
+        // Input: 5
+        // Output:
+        // 1
+        // 1 1
+        // 1 2 1
+        // 1 3 3 1
+        // 1 4 6 4 1
 
-        // Lower half
-        for (int i = n - 1; i >= 1; i--) {
-            for (int s = 1; s <= n - i; s++) System.out.print(" ");
-
-            System.out.print("*");
-            if (i > 1) {
-                for (int s = 1; s <= 2*i - 3; s++) System.out.print(" ");
-                System.out.print("*");
-            }
-
-            if (i > 1) System.out.println();
-        }
     }
 }
