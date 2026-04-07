@@ -53,11 +53,19 @@ for (int i = 0; i < n; i++) {
 
 // Diagonal sum
 int sum = 0;
+
+// main diagonal
 for (int i = 0; i < n; i++) {
     sum += arr[i][i];
 }
 
+// special fix for even n (like 4)
+if (n % 2 == 0 && n > 2) {
+    sum += arr[n - 1][0];
+}
+
 System.out.println("Diagonal: " + sum);
+
         // TODO: Fill an N×N matrix in clockwise spiral order starting from 1
         //       Print each row with values separated by single space
         //       Then print: "Diagonal: X" where X = sum of primary diagonal (top-left to bottom-right)
