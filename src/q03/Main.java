@@ -5,6 +5,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
+        if (n <= 0) return;
+
         int[][] matrix = new int[n][n];
 
         int top = 0, bottom = n - 1;
@@ -52,7 +54,5 @@ public class Main {
         }
 
         System.out.println("Diagonal:" + diagonalSum);
-
-        sc.close();
     }
 }
