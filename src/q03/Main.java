@@ -53,6 +53,6 @@ public class Main {
             diagonalSum += matrix[i][i];
         }
 
-        System.out.println("Diagonal:" + diagonalSum);
+        System.out.println("Diagonal: " + diagonalSum);
     }
 }
